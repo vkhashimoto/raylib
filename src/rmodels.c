@@ -5557,7 +5557,7 @@ static Model LoadGLTF(const char *fileName)
                     if (mesh->primitives[p].attributes[j].type == cgltf_attribute_type_position)      // POSITION, vec3, float
                     {
                         cgltf_accessor *attribute = mesh->primitives[p].attributes[j].data;
-
+                        if (mesh->name) strncpy(model.meshes[meshIndex].name, mesh->name, sizeof(model.meshes[meshIndex].name) -1);
                         // WARNING: SPECS: POSITION accessor MUST have its min and max properties defined
 
                         if (model.meshes[meshIndex].vertices != NULL) TRACELOG(LOG_WARNING, "MODEL: [%s] Vertices attribute data already loaded", fileName);

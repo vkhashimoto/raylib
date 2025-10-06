@@ -345,6 +345,7 @@ typedef struct Camera2D {
 typedef struct Mesh {
     int vertexCount;        // Number of vertices stored in arrays
     int triangleCount;      // Number of triangles stored (indexed or not)
+    char name[128];         // Mesh name
 
     // Vertex attributes data
     float *vertices;        // Vertex position (XYZ - 3 components per vertex) (shader-location = 0)
